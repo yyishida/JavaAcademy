@@ -15,8 +15,13 @@ public class Nomal0３ {
 	* mainメソッド
 	* @param args コマンドライン引数
 	*/
-	public static void main(String[] args)throws Exception{
+	public static void main(String[] args){
       
+      String s1 = "SeattleConsulting";
+      String s2 = "SeattleConsulting";
+      String s3 = "seattle";
+      String s4 = new"seattle";
+
       
 
 	}
