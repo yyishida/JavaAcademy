@@ -10,9 +10,7 @@ import java.util.Scanner;
 * 多次元配列で格納を行うクラス
 */
 public class Nomal02{
-       
-      
-    
+
 	/**
 	* mainメソッド
 	* @param args コマンドライン引数
@@ -29,16 +27,16 @@ public class Nomal02{
 
       int x = 1;
       int y = 1;
+
 	for(int i = 0; i<seiseki.length; i++){
 		for(int j = 0; j<seiseki[0].length; j++){
 
 			System.out.println("社員"+x+"の"+y+"回目の点数は"+seiseki[i][j]+"です。");
+
          y++;
-		}x++;y=1;
+
+		}
+		  x++;y=1;
+		}
 	}
-
-
-}
-
-
 }
