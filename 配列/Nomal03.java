@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 /**
 * Nomal0３クラス
-* ArrayList
+* ArrayListを使い要素を追加し、拡張for文を使い出力するクラス
 */
 public class Nomal03{
 
@@ -28,8 +28,15 @@ public class Nomal03{
 		  strList1.add("石田　友");
 		  strList1.add("石田　結");
 
-		  // 追加した順にリストに入る
-		  System.out.println(strList1);
+		  System.out.println("チーム石田のメンバーを紹介します。");
+
+		  for(String member : strList1){
+		  	System.out.println(member);
+		  }
+
+		  System.out.println("以上"+strList1.size()+"名。よろしくお願い致します。");
+
+
 
 		}
 }
