@@ -6,10 +6,10 @@
 //文字入力に必要なパッケージをインポートする
 import java.util.Scanner;
 /**
-* Nomal0１クラス
+* Practice_arrayクラス
 * 配列に格納を行うクラス
 */
-public class Nomal01{
+public class Practice_array{
 
     	/**
     	* mainメソッド

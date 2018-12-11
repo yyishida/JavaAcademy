@@ -6,10 +6,10 @@
 //文字入力に必要なパッケージをインポートする
 import java.util.Scanner;
 /**
-* Nomal02クラス
+* Practice_whileクラス
 * while文で繰り返し処理を行うクラス
 */
-public class Nomal02{
+public class Practice_while{
 
 	/**
 	* mainメソッド

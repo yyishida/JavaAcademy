@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 /**
-* Nomal0３クラス
+* Practice_arraylistクラス
 * ArrayListを使い要素を追加し、拡張for文を使い出力するクラス
 */
-public class Nomal03{
+public class Practice_arraylist{
 
 
 	/**

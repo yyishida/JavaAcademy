@@ -6,10 +6,10 @@
 //文字入力に必要なパッケージをインポートする
 import java.io.*;
 /**
-* Nomal01クラス
+* Practice_ifクラス
 * if文で状況に応じた処理を行うクラス
 */
-public class Nomal01{
+public class Practice_if{
 
 	/**
 	* mainメソッド

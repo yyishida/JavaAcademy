@@ -9,7 +9,7 @@ import java.io.*;
 * Nomal01クラス
 * for文で繰り返し処理を行うクラス
 */
-public class Nomal01{
+public class Practice_for{
 
 	/**
 	* mainメソッド

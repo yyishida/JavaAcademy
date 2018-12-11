@@ -6,10 +6,10 @@
 //文字入力に必要なパッケージをインポートする
 import java.io.*;
 /**
-* Nomal0２クラス
+* Practice_switchクラス
 * switch文で状況に応じた処理を行うクラス
 */
-public class Nomal02 {
+public class Practice_switch{
 
 	/**
 	* mainメソッド
