@@ -18,10 +18,10 @@ public class Nomal02 {
 	*/
 	public static void main(String[] args){
 
-      int i = Integer.parseInt(args[0]);
+      int grading = Integer.parseInt(args[0]);
 
 
-		switch (i){
+		switch (grading){
 		  case 1:
 		    System.out.println("もっとがんばりましょう");
 		    break;
