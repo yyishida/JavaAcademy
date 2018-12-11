@@ -3,8 +3,6 @@
 * @author yu-ishida
 */
 
-
-
 /**
 * sameNameクラス
 * 5つのインスタンスメソッドを作るクラス
@@ -12,7 +10,7 @@
  class sameName{
 
 
-	 // 引き数を保持しないsameNameメソッド
+    // 引き数を保持しないsameNameメソッド
 	public void sameName(){
         System.out.println("引き数を保持しないsameNameメソッドです");
     }
@@ -37,7 +35,7 @@
     *@param x
     */
     public void sameName(String x){
-    	System.out.println("String型の引き数を１つ持つsameNameメソッドです。引数:"+x);
+        System.out.println("String型の引き数を１つ持つsameNameメソッドです。引数:"+x);
     }
     /**
     *String型の引数を1つ保持するsameNameメソッド
@@ -62,11 +60,11 @@ public class Nomal01{
 
 		sameName aaa=new sameName();
 
-		aaa.sameName();
-        aaa.sameName(0);
-        aaa.sameName(0,1);
-        aaa.sameName("str1");
-        aaa.sameName("str1","str2");
+    		aaa.sameName();
+            aaa.sameName(0);
+            aaa.sameName(0,1);
+            aaa.sameName("str1");
+            aaa.sameName("str1","str2");
 
-}
+    }
 }
