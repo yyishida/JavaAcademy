@@ -13,8 +13,7 @@ public class Nomal01 {
 
 	/**
 	* mainメソッド
-    * キーボードから整数値(1〜10)を入力され、入力された数値ごとにメッセージを変更して出力するコード
-    * if文を使用
+    * キーボードから整数値(1〜10)を入力され、入力された数値ごによりメッセージを変更して出力するメソッド
 	* @param args コマンドライン引数
 	*/
 	public static void main(String[] args)throws Exception{
