@@ -6,7 +6,7 @@
 //文字入力に必要なパッケージをインポートする
 import java.io.*;
 /**
-* Nomal01クラス
+* Practice_forクラス
 * for文で繰り返し処理を行うクラス
 */
 public class Practice_for{
@@ -18,15 +18,15 @@ public class Practice_for{
 	public static void main(String[] args){
 
     //argsに受け取ったコマンドライン引数をiに代入
-    int i = Integer.parseInt(args[0]);
+    int number = Integer.parseInt(args[0]);
 
-    int k =0;
+    int total =0;
 
-    for(int j = 1; j <= i; j++){
-      k += j;
+    for(int j = 1; j <= number; j++){
+      total += j;
     }
 
-    System.out.println("1から" + i + "の和は、" + k + "です。");
+    System.out.println("1から" + number + "の和は、" + total + "です。");
 
   }
 
