@@ -37,6 +37,21 @@ public class Nomal02 {
 		  case 5:
 		    System.out.println("大変優秀です");
 		    break;
+		  case 6:
+		    System.out.println("あきらめたらそこで試合終了ですよ");
+		    break;
+		  case 7:
+		    System.out.println("あきらめたらそこで試合終了ですよ");
+		    break;
+		  case 8:
+		    System.out.println("あきらめたらそこで試合終了ですよ");
+		    break;
+		  case 9:
+		    System.out.println("あきらめたらそこで試合終了ですよ");
+		    break;
+		  case 10:
+		    System.out.println("あきらめたらそこで試合終了ですよ");
+		    break;
 
 	}
 
