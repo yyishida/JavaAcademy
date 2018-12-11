@@ -37,10 +37,11 @@ public class Nomal01 {
                   System.out.println("5が入力されました。");
             	}else{
             		System.out.println("6以上の整数" + i + "が入力されました。");
-            	}else{
-            		System.out.println("1~10の整数を入力してください！！")
-            	}
-            	      }
+                }
+
+            }else{
+                    System.out.println("1~10の整数を入力してください！！");
+                }
 
 	     }
 }
