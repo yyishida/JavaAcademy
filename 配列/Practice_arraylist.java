@@ -15,6 +15,7 @@ public class Practice_arraylist{
 
 	/**
 	* mainメソッド
+	*入力した全員の名前、人数を出力するクラス
 	* @param args コマンドライン引数
 	*/
 	public static void main(String[] args){

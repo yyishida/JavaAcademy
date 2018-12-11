@@ -13,6 +13,7 @@ public class Practice_while{
 
   /**
   * mainメソッド
+  *整数値(1〜100)が入力され、while文を使って、7の倍数が入力されると処理が終了するクラス
   * @param args コマンドライン引数
   */
   public static void main(String[] args){
@@ -31,7 +32,7 @@ public class Practice_while{
 
       number = scan.nextInt();
     }
-      System.out.println("処理を終了しました。");
+    System.out.println("処理を終了しました。");
 
 
   }
