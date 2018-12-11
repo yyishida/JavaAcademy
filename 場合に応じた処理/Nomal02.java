@@ -13,6 +13,7 @@ public class Nomal02 {
 
 	/**
 	* mainメソッド
+	* 実行時引数を用いて整数値(1〜10)を指定し、場合に応じてメッセージを出力するメソッド
 	* @param args コマンドライン引数
 	*/
 	public static void main(String[] args)throws Exception{

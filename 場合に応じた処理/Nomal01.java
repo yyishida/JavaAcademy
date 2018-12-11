@@ -9,7 +9,7 @@ import java.io.*;
 * Nomal01クラス
 * if文で状況に応じた処理を行うクラス
 */
-public class Nomal01 {
+public class Nomal01{
 
 	/**
 	* mainメソッド
