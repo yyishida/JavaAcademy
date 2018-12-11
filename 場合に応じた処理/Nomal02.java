@@ -23,20 +23,21 @@ public class Nomal02 {
 
 		switch (i){
 		  case 1:
-		    System.out.println("非常に不満");
+		    System.out.println("もっとがんばりましょう");
 		    break;
 		  case 2:
-		    System.out.println("少し不満");
+		    System.out.println("もう少し頑張りましょう");
 		    break;
 		  case 3:
-		    System.out.println("どちらとも言えない");
+		    System.out.println("さらに上を目指しましょう");
 		    break;
 		  case 4:
-		    System.out.println("少し満足");
+		    System.out.println("大変よくできました");
 		    break;
 		  case 5:
-		    System.out.println("大変満足");
+		    System.out.println("大変優秀です");
 		    break;
+
 	}
 
 	}
