@@ -23,13 +23,13 @@ public class Practice_while{
     System.out.println("1~100の整数を入力してください。");
 
     // 入力の読み込み
-    int i = scan.nextInt();
+    int number = scan.nextInt();
 
     // 繰り返し処理
-    while(!(i%7==0)){
+    while (number % 7 != 0){
       System.out.println("1~100の整数を入力してください。");
 
-      i = scan.nextInt();
+      number = scan.nextInt();
     }
       System.out.println("処理を終了しました。");
 

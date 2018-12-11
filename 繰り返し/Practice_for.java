@@ -3,8 +3,6 @@
 * @author yu-ishida
 */
 
-//文字入力に必要なパッケージをインポートする
-import java.io.*;
 /**
 * Practice_forクラス
 * for文で繰り返し処理を行うクラス
