@@ -5,7 +5,6 @@
 
 //文字入力に必要なパッケージをインポートする
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 /**
 * Practice_arraylistクラス
@@ -35,8 +34,6 @@ public class Practice_arraylist{
 		}
 
 		System.out.println("以上"+strList1.size()+"名。よろしくお願い致します。");
-
-
 
 	}
 }

@@ -7,7 +7,7 @@
 * sameNameクラス
 * 5つのインスタンスメソッドを作るクラス
 */
- class sameName{
+class sameName{
 
 
     // 引き数を保持しないsameNameメソッド
@@ -16,34 +16,34 @@
     }
     /**
     * int型の引数を１つ持つsameNameメソッド
-    * @param name
+    * @param num 数値の0が引数
     */
 
-    public void sameName(int n){
-        System.out.println("int型の引き数を１つもつsameNameメソッドです。引き数:"+n);
+    public void sameName(int num){
+        System.out.println("int型の引き数を１つもつsameNameメソッドです。引き数:"+num);
     }
     /**
     *int型の引き数を２つ持つsameNameメソッド
-    * @param a
-    * @param b
+    * @param nums
+    * @param nums2
     */
-    public void sameName(int a,int b){
-    	System.out.println("int型の引き数を２つ持つsameNameメソッドです。引き数:"+a+","+b);
+    public void sameName(int nums,int nums2){
+    	System.out.println("int型の引き数を２つ持つsameNameメソッドです。引き数:"+nums+","+nums2);
     }
     /**
     *String型の引数を1つ保持するsameNameメソッド
-    *@param x
+    *@param character
     */
-    public void sameName(String x){
-        System.out.println("String型の引き数を１つ持つsameNameメソッドです。引数:"+x);
+    public void sameName(String character){
+        System.out.println("String型の引き数を１つ持つsameNameメソッドです。引数:"+character);
     }
     /**
     *String型の引数を1つ保持するsameNameメソッド
-    *@param y
-    *@param z
+    *@param characters
+    *@param characters2
     */
-    public void sameName(String y,String z){
-    	System.out.println("String型の２つ持つsameNameメソッドです。引数:"+y+","+z);
+    public void sameName(String characters,String characters2){
+    	System.out.println("String型の２つ持つsameNameメソッドです。引数:"+characters+","+characters2);
     }
 
 }
@@ -58,13 +58,13 @@ public class Nomal01{
 	*/
 	public static void main(String[] args){
 
-		sameName aaa=new sameName();
+		sameName datas=new sameName();
 
-    		aaa.sameName();
-            aaa.sameName(0);
-            aaa.sameName(0,1);
-            aaa.sameName("str1");
-            aaa.sameName("str1","str2");
+		datas.sameName();
+        datas.sameName(0);
+        datas.sameName(0,1);
+        datas.sameName("str1");
+        datas.sameName("str1","str2");
 
     }
 }
