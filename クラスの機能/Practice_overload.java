@@ -24,23 +24,23 @@ class sameName{
     }
     /**
     *int型の引き数を２つ持つsameNameメソッド
-    * @param nums
-    * @param nums2
+    * @param nums 数値の0が引数
+    * @param nums2 数値の1が引数
     */
     public void sameName(int nums,int nums2){
     	System.out.println("int型の引き数を２つ持つsameNameメソッドです。引き数:"+nums+","+nums2);
     }
     /**
     *String型の引数を1つ保持するsameNameメソッド
-    *@param character
+    *@param character "str1"が引数
     */
     public void sameName(String character){
         System.out.println("String型の引き数を１つ持つsameNameメソッドです。引数:"+character);
     }
     /**
     *String型の引数を1つ保持するsameNameメソッド
-    *@param characters
-    *@param characters2
+    *@param characters "str1"が引数
+    *@param characters2 "str2"が引数
     */
     public void sameName(String characters,String characters2){
     	System.out.println("String型の２つ持つsameNameメソッドです。引数:"+characters+","+characters2);
@@ -55,6 +55,7 @@ public class Nomal01{
 	/**
 	* mainメソッド
 	* @param args コマンドライン引数
+    *インスタンス化を行いsamNameクラスからインスタンスメソッドを呼び出すメソッド
 	*/
 	public static void main(String[] args){
 
