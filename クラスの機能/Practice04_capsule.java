@@ -35,6 +35,7 @@ class CapsuleationPractice{
 	/**
 	* getPrivateDataメソッド
 	* privateDataを返却するメソッド
+	* @return privateData
 	*/
 	public int getPrivateData(){
 		return privateData;
