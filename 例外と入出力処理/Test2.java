@@ -32,46 +32,48 @@ class Test2{
       // 取り出した値を入れる変数
       int numbers = 0;
       //足し算した値を入れる変数
-      int num1 = 0;
+      int plus = 0;
       //引き算した値を入れる変数
-      int num2 = 0;
+      int minus = 20;
       //掛け算した値を入れる変数
-      int num3 = 1;
+      int multiplied = 1;
       //割り算した値を入れる変数
-      int num4 = 0;
+      int divided = 100;
+
+
 
       //ファイルを読み込み計算する
       while(scan.hasNext()){
         numbers = scan.nextInt();
 
-        num1 += numbers;
+        plus += numbers;
 
-        if(num2 == 0){
-          num2 = numbers;
-        }else{
-          num2 -= numbers;
-        }
+        //if(minus == 0){
+         // minus = numbers;
+        // }else{
+        minus -= numbers;
+        //}
 
-        num3 *= numbers;
+        multiplied *= numbers;
 
-        if(num4 == 0){
-          num4 = numbers;
-        }else{
-          num4 /= numbers;
-        }
+        //if(divided == 0){
+        //  divided = numbers;
+        //}else{
+        divided /= numbers;
+        //}
       }
       //ファイルを書き込み
       File file2 = new File("./file/output/TestOutput.txt");
 
       PrintWriter pw = new PrintWriter(new FileWriter(file2));
 
-      pw.println(num1);
+      pw.println(plus);
 
-      pw.println(num2);
+      pw.println(minus);
 
-      pw.println(num3);
+      pw.println(multiplied);
 
-      pw.println(num4);
+      pw.println(divided);
 
       pw.close();
 

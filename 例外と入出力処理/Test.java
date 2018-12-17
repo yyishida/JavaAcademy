@@ -9,6 +9,11 @@
 */
 public class Test {
 
+    /**
+    * mainメソッド
+    * コマンドライン引数を受け取り例外処理するメソッド
+    * @param args コマンドライン引数
+    */
 	public static void main(String args[]) {
 	 	try{
 			int i = Integer.parseInt(args[0]);
@@ -18,14 +23,14 @@ public class Test {
 
 			System.out.println("「正常」");
 
-			}catch(NumberFormatException e){
+		}catch(NumberFormatException e){
 
 				System.out.println("「数字を入力してください」");
-			}catch(ArrayIndexOutOfBoundsException e){
+		}catch(ArrayIndexOutOfBoundsException e){
 				System.out.println("「引数は2つ設定してください」");
-			}finally{
+		}finally{
 				System.out.println("「終了」");
-			}
+		}
 
 	}
 }
