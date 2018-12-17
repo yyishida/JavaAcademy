@@ -34,6 +34,7 @@ public class Practice01_abst{
 	/**
 	* mainメソッド
 	* noseメソッドを実行するメソッド
+	* @param args コマンドライン引数
 	*/
 	public static void main(String[] args){
 		//インスタンス化

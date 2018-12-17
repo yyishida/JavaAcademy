@@ -10,20 +10,20 @@
 public interface Face{
 	/**
 	* mouthメソッド
-	* 抽象メソッド
+	* 口を表すメソッド
 	*/
-	public abstract String mouth();
+	String mouth();
 	/**
 	* eyeメソッド
-	* 抽象メソッド
+	* 目を表すメソッド
 	* @param number //値は数値
 	*/
-	public abstract int eye(int number);
+	int eye(int number);
 	/**
 	* noseメソッド
-	* 抽象メソッド
+	* 鼻を表すメソッド
 	*/
-	public abstract void nose();
+	void nose();
 }
 
 
