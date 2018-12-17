@@ -20,27 +20,31 @@ class Employee2{
     * 名前を標準出力するメソッド
     */
     public void names(){
-        System.out.println("私はシアトルコンサルティングの社員です。名前は"+this.name+"です。");
+        System.out.println("私はシアトルコンサルティングの社員です。名前は" + this.name + "です。");
     }
     /**
     * numberメソッド
     * 社員の人数を出力するクラスメソッド
     */
     public static void number(){
-    	System.out.println("社員は全部で"+numbers+"人です");
+    	System.out.println("社員は全部で" + numbers + "人です");
     }
 
     //コンストラクタ
     public Employee2(){
         this.name = "匿名希望";
-        numbers++;
+        numbers ++;
     }
-    public Employee2(String x){
-        this.name = x;
-        if(10<x.length()){
-            String s = name.substring(0,9);
+    public Employee2(String empname){
+        if(11 < empname.length()){
+            String shortname = empname.substring(0,9);
+            this.name = shortname;
+            numbers ++;
+        }else{
+            this.name = empname;
+            numbers ++;
+
         }
-        numbers++;
     }
 
 }

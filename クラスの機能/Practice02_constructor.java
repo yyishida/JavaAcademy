@@ -18,17 +18,20 @@ class Employee{
     * 名前を標準出力するメソッド
     */
     public void names(){
-        System.out.println("私はシアトルコンサルティングの社員です。名前は"+this.name+"です。");
+        System.out.println("私はシアトルコンサルティングの社員です。名前は" + this.name + "です。");
     }
 
     //コンストラクタ
     public Employee(){
-        this.name="匿名希望";
+        this.name = "匿名希望";
     }
-    public Employee(String x){
-        this.name=x;
-        if(10<x.length()){
-            String s = name.substring(0,9);
+    public Employee(String empname){
+        if(11 < empname.length()){
+            String shortname = empname.substring(0,9);
+            this.name = shortname;
+        }else{
+            this.name = empname;
+
         }
     }
 }
@@ -46,9 +49,9 @@ public class Practice02_constructor{
     */
     public static void main(String[] args){
         //インスタンス生成
-        Employee noname=new Employee();
+        Employee noname = new Employee();
 
-        Employee nams=new Employee("pepper");
+        Employee nams = new Employee("pepper");
 
         noname.names();
 
