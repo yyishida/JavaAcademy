@@ -37,7 +37,7 @@ class Employee2{
     }
     public Employee2(String empname){
         if(11 < empname.length()){
-            String shortname = empname.substring(0,9);
+            String shortname = empname.substring(0,10);
             this.name = shortname;
             numbers ++;
         }else{
@@ -63,7 +63,7 @@ public class Practice03_class{
         //インスタンス生成
         Employee2 noname = new Employee2();
 
-        Employee2 nams = new Employee2("pepper");
+        Employee2 nams = new Employee2("1234567891２");
 
         noname.names();
 
