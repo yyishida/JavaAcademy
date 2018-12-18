@@ -14,6 +14,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 //ファイルを読み込むクラスをインポート
 import java.io.PrintWriter;
+//リストを使うためのクラスをインポート
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 //csvファイルを読み込み、四則演算をしてtxtファイルに出力するクラス
 class Test2{
@@ -28,39 +32,38 @@ class Test2{
       Scanner scan = new Scanner(file);
       //カンマで区切って読み込む
       scan.useDelimiter(",");
+      //listを宣言
+      List<Integer> list = new ArrayList<Integer>();
 
       // 取り出した値を入れる変数
-      int numbers = 0;
-      //足し算した値を入れる変数
-      int plus = 0;
-      //引き算した値を入れる変数
-      int minus = 20;
-      //掛け算した値を入れる変数
-      int multiplied = 1;
-      //割り算した値を入れる変数
-      int divided = 100;
+      int result = 0;
 
-
-
-      //ファイルを読み込み計算する
+      //ファイルを読み込みlistに格納
       while(scan.hasNext()){
-        numbers = scan.nextInt();
+        result = scan.nextInt();
 
-        plus += numbers;
+        list.add(result);
 
-        //if(minus == 0){
-         // minus = numbers;
-        // }else{
-        minus -= numbers;
-        //}
+      }
 
-        multiplied *= numbers;
 
-        //if(divided == 0){
-        //  divided = numbers;
-        //}else{
-        divided /= numbers;
-        //}
+      //足し算した値を入れる変数
+      int plus = list.get(0);
+      //引き算した値を入れる変数
+      int minus = list.get(0);
+      //掛け算した値を入れる変数
+      int multiplied = list.get(0);
+      //割り算した値を入れる変数
+      int divided = list.get(0);
+
+      for(int i = 1; i < list.size(); i ++){
+        plus += list.get(i);
+        minus -= list.get(i);
+        multiplied *= list.get(i);
+        divided /= list.get(i);
+
+
+
       }
       //ファイルを書き込み
       File file2 = new File("./file/output/TestOutput.txt");
