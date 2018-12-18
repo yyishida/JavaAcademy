@@ -1,3 +1,5 @@
+//12/18 これが最新です
+
 /**
 * 多次元配列基礎
 * @author yu-ishida
@@ -43,7 +45,7 @@ public class challenge03{
 			}
 
 			average /= seiseki[i].length;
-        	// System.out.println("社員" + (i + 1) + "平均点は" + average);
+
 
         	intList1.add(average);
 
