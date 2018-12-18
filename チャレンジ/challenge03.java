@@ -20,56 +20,51 @@ public class challenge03{
 
 		List<Integer> intList1 = new ArrayList<Integer>();
 
+    	//宣言と初期化
+		int[][] seiseki = {{20,50,60,},
+                          {30,60,70,},
+                          {45,60,80,},
+                          {35,40,50,}};
+        int average = 0;
+		for(int i = 0; i < seiseki.length; i ++){
 
+			for(int j = 0; j < seiseki[i].length; j ++){
 
-
-		//宣言と初期化
-		int[][] seiseki={{20,50,60,},
-                         {30,60,70,},
-                         {45,60,80,},
-                         {35,40,50,}};
-　　　　　
-		for(int i = 0; i<seiseki.length; i++){
-
-			for(int j = 0; j<seiseki[i].length; j++){
-
-				System.out.println("社員"+(i+1)+"の"+(j+1)+"回目の点数は"+seiseki[i][j]+"です。");
+				System.out.println("社員" + (i + 1) + "の" + (j + 1) + "回目の点数は" + seiseki[i][j]+"です。");
 
 			}
 
-		}
 
-        int average = 0;
-		for(int i = 0; i<seiseki.length; i++){
 
-			for(int j = 0; j<seiseki[i].length; j++){
+			for(int j = 0; j < seiseki[i].length; j ++){
 				average += seiseki[i][j];
 
 
 			}
 
-		average /= 3;
-        System.out.println("社員" + (i+1) + "平均点は"+average);
+			average /= seiseki[i].length;
+        	// System.out.println("社員" + (i + 1) + "平均点は" + average);
 
-        intList1.add(average);
+        	intList1.add(average);
 
 
-        average = 0;
+        	average = 0;
 
 		}
+		for(int y = 0; y < intList1.size(); y++){
+
+			System.out.println("社員" +(y + 1) + "の平均点は" + intList1.get(y));
+        }
 		int i = 1;
         for(int a : intList1){
-			if(a<60){
-				System.out.println("社員"+i+"はもう少し勉強しましょう。");
+			if(a < 60){
+				System.out.println("社員" + i + "はもう少し勉強しましょう。");
 
 
-		    }i++;
-
-
+		    }
+		    i ++;
 		}
 
 	}
 
 }
-
-
