@@ -22,27 +22,28 @@ public class challenge01{
 
 		int player2 = new java.util.Random().nextInt(3)+1;
 
-		//手を格納する
-		String hands = "";
+		//手を格納する変数の初期化
+		String player1_hands = "";
 
-		String handss = "";
+		String player2_hands = "";
+
 
 
 
 		if(player1 == 1){
-			hands = GUU;
+			player1_hands = GUU;
 		}else if(player1 == 2){
-			hands = CHOKI;
-		}else if(player1 == 3){
-			hands = PAA;
+			player1_hands = CHOKI;
+		}else{
+			player1_hands = PAA;
         }
 
         if(player2 == 1){
-			handss = GUU;
+			player2_hands = GUU;
 		}else if(player2 == 2){
-			handss = CHOKI;
-		}else if(player2 == 3){
-			handss = PAA;
+			player2_hands = CHOKI;
+		}else{
+			player2_hands = PAA;
         }
 
 
@@ -50,45 +51,31 @@ public class challenge01{
 
 
 		if(player1 == player2){
-			jadge = "あいこです。";
+			judge = "あいこです。";
 		}else{
 			if(player1 == 1){
-				switch(player2){
-				    case 2:
-				       	jadge = "player1の勝ちです。";
-				        break;
-				    case 3:
-				       	jadge = "player2の勝ちです。";
-			            break;
-	            }
-			}else if(player1 == 2){
-				switch(player2){
-					case 1:
-				       	jadge = "player2の勝ちです。";
-				        break;
-				    case 3:
-				       	jadge = "player1の勝ちです。";
-			            break;
-				}
-			}else if(player1 == 3){
-				switch(player2){
-					case 1:
-			       	jadge = "player1の勝ちです。";
-			        break;
-			    case 2:
-			       	jadge = "player2の勝ちです。";
-			        break;
-		    	}
-			}
+				if(player2 == 2){
+					judge = "player1の勝ちです。";
+	        }else if(player1 == 2){
+	        	if(player2 == 3){
+                	judge = "player1の勝ちです。";
+	        }else if(player1 == 3){
+	        	if(player2 == 1){
+	        		judge = "player1の勝ちです。";
+	        }else{
+	        	judge = "player2の勝ちです。";
+	        }
+	        }
+	        }
 		}
 		//ジャンケン出力
 		System.out.println("ジャンケンを開始します。");
 
-		System.out.println("player1:" + hands);
+		System.out.println("player1:" + player1_hands);
 
-		System.out.println("player2:" + handss);
+		System.out.println("player2:" + player2_hands);
 
-		System.out.println(jadge);
+		System.out.println(judge);
     }
 }
 

@@ -6,7 +6,7 @@
 * challenge05クラス
 * 多次元配列で格納を行うクラス.
 */
-public class challenge05{
+public class challenge06{
 
 	/**
 	* mainメソッド
