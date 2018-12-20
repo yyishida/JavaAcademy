@@ -59,6 +59,11 @@ class Player{
 	//変数hand_typeを定義
 	public String hand_type;
 
+	//ジャンケンの手は定数化する
+	final String GUU = "グー";
+	final String CHOKI = "チョキ";
+	final String PAA = "パー";
+
 
 	// ジャンケンの手を設定するインスタンスメソッド
     public void sethand(){
@@ -67,10 +72,6 @@ class Player{
     	//1~3のランダムな数字がでてくるそれをint型の変数に代入している
 		hand = new java.util.Random().nextInt(3) + 1;
 
-        //ジャンケンの手は定数化する
-		final String GUU = "グー";
-		final String CHOKI = "チョキ";
-		final String PAA = "パー";
 
 		// ジャンケンの手とランダム数値を紐づける
 		// handにはhand_numberが入っておりインスタンス化により使えるようになる

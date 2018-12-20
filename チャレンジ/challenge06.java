@@ -1,177 +1,173 @@
-/**ジャンケンプログラム
+/**
+* チャレンジ問題＿インターフェース
 * @author yu-ishida
 */
-
-/**
-* challenge05クラス
-* 多次元配列で格納を行うクラス.
-*/
+//ランダムさせるクラスをインポート
+import java.util.Random;
+ // Playerクラス、Judgeクラスをインスタンス化して出力するクラス
 public class challenge06{
 
-	/**
-	* mainメソッド
-	* プレイヤーを定義し行動を定義するクラス.
-	* @param args コマンドライン引数
-	*/
-	public static void main(String[] args){
+    /**
+    * mainメソッド
+    * @param args コマンドライン引き数
+    */
+	public static void main(String args[]){
 
-		System.out.println("京和さん対pepperさんのジャンケンを開始します。");
-		// プレーヤー１
+		//Playerクラスをインスタンス化して呼び出して変数player1に情報を格納
+		//("京和さん")の部分はコンストラクタ
 		Player player1 = new Player("京和さん");
-		player1.sethand(Judge.PA); //  何を出す？
+		//player1が出す手を決めたいのでsethandメソッドを使う
+		player1.sethand();
+		//プレイヤー２をクレイジープレイヤーにする
+        //Playerクラスをインスタンス化して呼び出して変数player2に情報を格納
+		//("Peperさん")の部分はコンストラクタ
+        CrazyPlayer player2 = new CrazyPlayer("Peperさん");
 
-		// プレーヤー２
-		CrazyPlayer player2 = new CrazyPlayer("pepper");
-		player2.sethand(Judge.PA); //  何を出す？
+        //player2が出す手を決めたいのでsethandメソッドを使う
+    	player2.sethand();
 
-		// ジャンケンを行う
-		Judge.judgment(player1,player2);
+        //Jadgeクラスをインスタンス化して呼び出して変数resultに代入
+        Judge result = new Judge(player1,player2);
+
+        // judgmentメソッドを使い勝者を出力する準備
+        result.judgment();
 
 
-    }
+	    //ゲームの開始を出力
+	    //名前をコンストラクタから
+    	System.out.println(player1.name + "対" + player2.name + "のじゃんけんを開始します。");
+        //ジャンケンで出した手を出力
+    	System.out.println(player1.name + ":" + player1.hand_type + " " + player2.name + ":" + player2.hand_type);
+	    //勝者を出力する
+		System.out.println(result.judge);
+	}
 }
-
-/**
-* コンストラクタを定義するクラス.
-*/
+//名前とじゃんけんの手を定義するクラス
 class Player{
-	//名前を格納するインスタンス変数
-    public String name;
+	//名前を格納するインスタンス変数nameを定義
+	public String name;
 
-    /**
-    * nameに任意の名前をセットするコンストラクタ
-    * @param name プレイヤーの名前
-    */
-    public Player(String name){
-        this.name = name;
-    }
+	/**コンストラクタでnameに名前をセット
+	*@param name インスタンス化される際に定義した名前が引数
+	*/
+	Player(String name){
+		this.name = name;
+	}
 
-    //手を格納するインスタンス変数
-    public int hand;
+	//ジャンケンの手を格納するインスタンス変数handをもつ
+	public int hand;
+
+	//変数hand_typeを定義
+	public String hand_type;
+
+	//ジャンケンの手は定数化する
+	final String GUU = "グー";
+	final String CHOKI = "チョキ";
+	final String PAA = "パー";
 
 
-    /**
-    * 手を設定するインスタンスメソッド.
-    * @param handtype 手の種類
-    */
-    public void sethand(int handtype){
-    	hand = handtype;
-    }
-    //戦略を格納する
-    int Tactics;
-    //戦略を変数にセットするメソッド
-    
+	// ジャンケンの手を設定するインスタンスメソッド
+    public void sethand(){
+
+
+    	//1~3のランダムな数字がでてくるそれをint型の変数に代入している
+		hand = new java.util.Random().nextInt(3) + 1;
+
+
+		// ジャンケンの手とランダム数値を紐づける
+		// handにはhand_numberが入っておりインスタンス化により使えるようになる
+	    if(hand == 1){
+	    	hand_type = GUU;
+	    }else if (hand == 2){
+	    	hand_type = CHOKI;
+	    }else{
+	    	hand_type = PAA;
+	    }
+
+	}
 }
-/**
-* Playerクラスを継承したクラス.
-*/
-
+//Playerクラスを継承したクラス
 class CrazyPlayer extends Player{
-	public CrazyPlayer(String name){
-        super(name);
-        //this.name = name;
+		/**
+        * playerコンストラクタをsuperを用いて使用
+        * @param name インスタンス化される際に定義した名前が引数
+        */
+		CrazyPlayer(String name){
+       		super(name);
+
+    }
+	//sethandメソッドをオーバーライドしてpeperさんをグーしか出さない設定にする
+	public void sethand(){
+
+		 hand = 1;
+		 hand_type = GUU;
     }
 
-	public void sethand(int handtype){
-		hand = 1;
-
-
-	}
 }
-/**
-* じゃんけん戦略インターフェース.
-*/
-public interface Tactics {
-    /**
-     * 戦略の通りにじゃんけんの手を返却するメソッド.
-     * グー・チョキ・パーは以下の対応を取る整数で表す.
-     * (1:グー　2:チョキ　3:パー)
-     * @return
-     */
-     public int readTactics();
-}
-/**
-* インターフェースを実装したランダムに手を出す戦略クラス.
-*/
-public class RandomTactics implements Tactics{
-}
-
-/**
-* インターフェースを実装した常にグーを出す戦略クラス.
-*/
-public class CrazyTactics implements Tactics{
-
-}
-/**
-*出力する内容を定義するクラス.
-*/
+// ジャンケンの勝敗を決めるクラス
 class Judge{
+	//player型をint型に変えるために変数を定義
+	public int player1_handNumber;
+	public int player2_handNumber;
+	//player型をString型に変えるために変数を定義
+	public String player1_name;
+	public String player2_name;
 
-	//定数化
-    public static final int GUU = 1;
-    public static final int CHOKI = 2;
-    public static final int PA = 3;
+	//プレイヤー型の引き数を2人分指定して情報を勝敗処理の判定に利用
+	/**
+	* Judgeがインスタンス化された時に作成されるコンストラクタ
+	* @param player1 Player型の変数player1が引数
+	* @param player2 Player型の変数player2が引数
+	*/
+	Judge(Player player1,Player player2){
+		player1_handNumber = player1.hand;
+		player2_handNumber = player2.hand;
 
-    /**
-    *勝敗判定メソッド.
-    *@param player1 プレイヤー１の情報
-    *@param player2 プレイヤー2の情報
-    */
-	public static void judgment(Player player1, Player player2){
-		 if(player1.hand == GUU){
-			switch(player2.hand){
-				case GUU:
-			       	System.out.println(player1.name + ":グー");
-			       	System.out.println(player2.name + ":グー");
-			       	System.out.println("あいこです。");
-			    break;
-			    case CHOKI:
-			    	System.out.println(player1.name + ":グー");
-			       	System.out.println(player2.name + ":チョキ");
-			       	System.out.println(player1.name + "の勝ちです。");
-			    break;
-			    case PA:
-			    	System.out.println(player1.name + ":グー");
-			       	System.out.println(player2.name + ":パー");
-			       	System.out.println(player2.name + "の勝ちです。");
-		        break;
-		    }
-		}else if(player1.hand == CHOKI){
-			switch(player2.hand){
-				case GUU:
-			       	System.out.println(player1.name + ":チョキ");
-			       	System.out.println(player2.name + ":グー");
-			       	System.out.println(player2.name + "の勝ちです。");
-			    break;
-			    case CHOKI:
-			    	System.out.println(player1.name + ":チョキ");
-			       	System.out.println(player2.name + ":チョキ");
-			       	System.out.println("あいこです。");
-			    break;
-			    case PA:
-			    	System.out.println(player1.name + ":チョキ");
-			       	System.out.println(player2.name + ":パー");
-			       	System.out.println(player1.name + "の勝ちです。");
-		        break;
-		    }
-		}else if(player1.hand == PA){
-			switch(player2.hand){
-				case GUU:
-			       	System.out.println(player1.name + ":パー");
-			       	System.out.println(player2.name + ":グー");
-			       	System.out.println(player1.name + "の勝ちです。");
-			    break;
-			    case CHOKI:
-			    	System.out.println(player1.name + ":パー");
-			       	System.out.println(player2.name + ":チョキ");
-			       	System.out.println(player2.name + "の勝ちです。");
-			    break;
-			    case PA:
-			    	System.out.println(player1.name + ":パー");
-			       	System.out.println(player2.name + ":パー");
-			       	System.out.println("あいこです。");
-		        break;
-		    }
-		}
+		player1_name = player1.name;
+		player2_name = player2.name;
 	}
+	    //jadgeを初期化
+		String judge = "";
+
+	// ジャンケンの勝敗判定をするメソッド
+	public void judgment(){
+
+
+		//ジャンケンの勝敗判定をして変数judgeに代入
+ 		if(player1_handNumber == player2_handNumber){
+ 			judge = "あいこです。";
+ 		}else{
+ 			if(player1_handNumber == 1){
+ 				switch(player2_handNumber){
+ 				    case 2:
+ 				       	judge = player1_name + "の勝ちです。";
+ 				        break;
+ 				    case 3:
+ 				       	judge = player2_name + "の勝ちです。";
+ 			            break;
+ 	            }
+ 			}else if(player1_handNumber == 2){
+ 				switch(player2_handNumber){
+ 					case 1:
+ 				       	judge = player2_name + "の勝ちです。";
+ 				        break;
+ 				    case 3:
+ 				       	judge = player1_name + "の勝ちです。";
+ 			            break;
+ 				}
+ 			}else if(player1_handNumber == 3){
+ 				switch(player2_handNumber){
+ 					case 1:
+ 			       	judge = player1_name + "の勝ちです。";
+ 			        break;
+ 			    case 2:
+ 			       	judge = player2_name + "の勝ちです。";
+ 			        break;
+ 		    	}
+ 			}
+ 	    }
+
+	}
+
 }
+
