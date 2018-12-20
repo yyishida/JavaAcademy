@@ -1,12 +1,16 @@
 /**
-* チャレンジ問題＿場合に応じた処理
+* チャレンジ問題＿クラスの機能
 * @author yu-ishida
 */
 //ランダムさせるクラスをインポート
 import java.util.Random;
- // コンピュータによる擬似プレイヤー2人によるじゃんけんを一回行うクラス.
+ // Playerクラス、Judgeクラスをインスタンス化して出力するクラス
 public class challenge04{
 
+    /**
+    * mainメソッド
+    * @param args コマンドライン引き数
+    */
 	public static void main(String args[]){
 
 		//Playerクラスをインスタンス化して呼び出して変数player1に情報を格納
@@ -38,12 +42,14 @@ public class challenge04{
 		System.out.println(result.judge);
 	}
 }
-
+//名前とじゃんけんの手を定義するクラス
 class Player{
 	//名前を格納するインスタンス変数nameを定義
 	public String name;
 
-	//コンストラクタでnameに名前をセット
+	/**コンストラクタでnameに名前をセット
+	*@param name インスタンス化される際に定義した名前が引数
+	*/
 	Player(String name){
 		this.name = name;
 	}
@@ -54,7 +60,7 @@ class Player{
 	public String hand_type;
 
 
-	// ジャンケンの手を設定するインスタンスメソッドを持つ
+	// ジャンケンの手を設定するインスタンスメソッド
     public void sethand(){
 
 
@@ -78,18 +84,21 @@ class Player{
 
 	}
 }
-
+// ジャンケンの勝敗を決めるクラス
 class Judge{
-
+　　//player型をint型に変えるために変数を定義
 	public int player1_handNumber;
 	public int player2_handNumber;
+	//player型をString型に変えるために変数を定義
 	public String player1_name;
 	public String player2_name;
 
-
-
 	//プレイヤー型の引き数を2人分指定して情報を勝敗処理の判定に利用
-	//コンストラクタ
+	/**
+	* Judgeがインスタンス化された時に作成されるコンストラクタ
+	* @param player1 Player型の変数player1が引数
+	* @param player2 Player型の変数player2が引数
+	*/
 	Judge(Player player1,Player player2){
 		player1_handNumber = player1.hand;
 		player2_handNumber = player2.hand;
@@ -100,7 +109,7 @@ class Judge{
 	    //jadgeを初期化
 		String judge = "";
 
-	// ジャンケンの勝敗判定をして変数
+	// ジャンケンの勝敗判定をするメソッド
 	public void judgment(){
 
 
