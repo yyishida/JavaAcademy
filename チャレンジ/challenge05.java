@@ -1,5 +1,5 @@
 /**
-* チャレンジ問題＿クラスの機能
+* チャレンジ問題＿新クラス
 * @author yu-ishida
 */
 //ランダムさせるクラスをインポート
@@ -87,7 +87,10 @@ class Player{
 }
 //Playerクラスを継承したクラス
 class CrazyPlayer extends Player{
-
+		/**
+        * playerコンストラクタをsuperを用いて使用
+        * @param name インスタンス化される際に定義した名前が引数
+        */
 		CrazyPlayer(String name){
        		super(name);
 
