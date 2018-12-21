@@ -98,8 +98,8 @@ class CrazyPlayer extends Player{
 	//sethandメソッドをオーバーライドしてpeperさんをグーしか出さない設定にする
 	public void sethand(){
 
-		 hand = 1;
-		 hand_type = GUU;
+		hand = 1;
+		hand_type = GUU;
     }
 }
 // ジャンケンの勝敗を決めるクラス

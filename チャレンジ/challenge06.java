@@ -15,13 +15,19 @@ public class challenge06{
 
 		//Playerクラスをインスタンス化して呼び出して変数player1に情報を格納
 		//("京和さん")の部分はコンストラクタ
-		Player player1 = new Player("京和さん");
+		Player player1 = new Player("ランダム戦略さん");
+
+		//戦略メソッドを使用
+		player1.setRondomTactics();
 		//player1が出す手を決めたいのでsethandメソッドを使う
 		player1.sethand();
-		//プレイヤー２をクレイジープレイヤーにする
+
         //Playerクラスをインスタンス化して呼び出して変数player2に情報を格納
 		//("Peperさん")の部分はコンストラクタ
-        CrazyPlayer player2 = new CrazyPlayer("Peperさん");
+        Player player2 = new Player("グーだけ戦略さん");
+
+        //戦略メソッドを使用
+        player2.setCrazyTactics();
 
         //player2が出す手を決めたいのでsethandメソッドを使う
     	player2.sethand();
@@ -53,26 +59,47 @@ class Player{
 	Player(String name){
 		this.name = name;
 	}
-
 	//ジャンケンの手を格納するインスタンス変数handをもつ
 	public int hand;
 
 	//変数hand_typeを定義
 	public String hand_type;
 
-	//ジャンケンの手は定数化する
-	final String GUU = "グー";
-	final String CHOKI = "チョキ";
-	final String PAA = "パー";
+
+
+
+	//戦略を格納するTactics型（インターフェース）の変数を宣言する
+    public Tactics tac;
+
+    //tac変数にランダム戦略をセットするメソッド
+    public void setRondomTactics(){
+    	// 変数tacにセットするためのにRandomTactics抽象クラスをインスタンス化
+    	this.tac = new RandomTactics();
+    }
+
+    //tac変数にグーだけ戦略をセットするメソッド
+    public void setCrazyTactics(){
+    	//変数tacにセットするためにCrazyTactics抽象クラスをインスタンス化
+    	this.tac = new CrazyTactics();
+    }
+
 
 
 	// ジャンケンの手を設定するインスタンスメソッド
     public void sethand(){
 
+    	//ランダムにジャンケンの手を返却する戦略,グーのみを出す戦略を変数handにセット
+    	hand = tac.readTactics();
+
+
 
     	//1~3のランダムな数字がでてくるそれをint型の変数に代入している
-		hand = new java.util.Random().nextInt(3) + 1;
+		//hand = new java.util.Random().nextInt(3) + 1;
 
+        //ジャンケンの手は定数化する
+		final String GUU = "グー";
+		final String CHOKI = "チョキ";
+		final String PAA = "パー";
 
 		// ジャンケンの手とランダム数値を紐づける
 		// handにはhand_numberが入っておりインスタンス化により使えるようになる
@@ -85,24 +112,6 @@ class Player{
 	    }
 
 	}
-}
-//Playerクラスを継承したクラス
-class CrazyPlayer extends Player{
-		/**
-        * playerコンストラクタをsuperを用いて使用
-        * @param name インスタンス化される際に定義した名前が引数
-        */
-		CrazyPlayer(String name){
-       		super(name);
-
-    }
-	//sethandメソッドをオーバーライドしてpeperさんをグーしか出さない設定にする
-	public void sethand(){
-
-		 hand = 1;
-		 hand_type = GUU;
-    }
-
 }
 // ジャンケンの勝敗を決めるクラス
 class Judge{
@@ -167,6 +176,52 @@ class Judge{
  			}
  	    }
 
+	}
+
+}
+/**
+ * じゃんけん戦略インターフェース
+ */
+//抽象クラスの最上位
+interface Tactics{
+    /**
+	* 戦略の通りにじゃんけんの手を返却するメソッド.
+	* グー・チョキ・パーは以下の対応を取る整数で表す.
+	* (1:グー　2:チョキ　3:パー)
+	* @return
+	*/
+	//抽象メソッド
+	//
+    int readTactics();
+}
+/**
+* インターフェースを継承したランダムに手を出す戦略クラス.
+*/
+class RandomTactics implements Tactics{
+	//変数定義
+	int hand;
+	//ランダムにジャンケンの手を返却する戦略のメソッド
+	//インターフェースを引き継いでいるのでpublic,static,abstractなメソッド
+	public int readTactics(){
+		//ランダム数値を作成　　
+		hand = new java.util.Random().nextInt(3) + 1;
+		//戻り値を設定
+		return hand;
+	}
+}
+
+/**
+* インターフェースを継承した常にグーを出す戦略クラス.
+*/
+class CrazyTactics implements Tactics{
+	//グーのみを出す戦略のメソッド
+	//インターフェースを引き継いでいるのでpublic,static,abstractなメソッド
+	public int readTactics(){
+		//handに１（グー）を用意
+		//hand = 1;
+		//常にグーを出す処理
+		return 1;
+		//hand_type = GUU;
 	}
 
 }
