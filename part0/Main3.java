@@ -21,7 +21,7 @@ public class Main3 {
 		 * i 少数
 		 * j 整数
 		 */
-		 int i = 3.5;
+		 double i = 3.5;
 		 int j =  2;
 
 		 System.out.println(i);
